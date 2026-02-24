@@ -14,6 +14,7 @@ Este repo tem como objetivo ser um dicionário/guia de arquitetura
 
 # Ordem
 
+<pre>
 Macro estrutura do sistema
     ↓
 Organização arquitetural interna
@@ -27,48 +28,198 @@ Soluções reutilizáveis de código
 Princípios fundamentais de design
 
 # Hierarquia Visual Completa
-
+</pre>
+    
 SOFTWARE SYSTEM
+
+<pre>
+├── 1️⃣ ARCHITECTURAL STYLES (estrutura macro do sistema)
+│   │
+│   ├── Monolithic
+│   │     ├── Modular Monolith
+│   │     └── Layered Monolith
+│   │
+│   ├── Client–Server
+│   │     ├── 2-Tier
+│   │     ├── 3-Tier
+│   │     └── N-Tier
+│   │
+│   ├── Microservices
+│   │     ├── Service per Business Capability
+│   │     ├── Database per Service
+│   │     ├── API Gateway
+│   │     ├── Service Discovery
+│   │     └── Circuit Breaker
+│   │
+│   ├── Service-Oriented Architecture (SOA)
+│   │     ├── ESB
+│   │     ├── Service Contracts
+│   │     ├── Orchestration
+│   │     └── Choreography
+│   │
+│   ├── Event-Driven Architecture (EDA)
+│   │     ├── Event Producers
+│   │     ├── Event Consumers
+│   │     ├── Message Broker
+│   │     ├── Pub/Sub
+│   │     └── Event Streaming
+│   │
+│   ├── Data-Centric
+│   │     ├── Shared Database
+│   │     └── Data Pipeline
+│   │
+│   ├── Component-Based
+│   │     ├── Reusable Components
+│   │     └── Plug-in Architecture
+│   │
+│   └── Domain-Oriented
+│         ├── Bounded Context
+│         └── Domain Segmentation
 │
-├── 1️⃣ Architectural Styles (macro estrutura)
-│      ├── Microservices
-│      ├── Layered
-│      ├── Event-Driven
-│      └── Client-Server
 │
-├── 2️⃣ Architectural Patterns (organização interna)
-│      ├── MVC
-│      ├── CQRS
-│      ├── Hexagonal
-│      ├── Onion
-│      └── Clean Architecture
+├── 2️⃣ ARCHITECTURAL PATTERNS (organização estrutural da aplicação)
+│   │
+│   ├── Layered Architecture
+│   │     ├── Presentation Layer
+│   │     ├── Application Layer
+│   │     ├── Domain Layer
+│   │     └── Infrastructure Layer
+│   │
+│   ├── MVC
+│   │     ├── Model
+│   │     ├── View
+│   │     └── Controller
+│   │
+│   ├── Clean Architecture
+│   │     ├── Entities
+│   │     ├── Use Cases
+│   │     ├── Interface Adapters
+│   │     └── Frameworks & Drivers
+│   │
+│   ├── Hexagonal (Ports & Adapters)
+│   │     ├── Ports (Inbound/Outbound)
+│   │     └── Adapters
+│   │
+│   ├── Onion Architecture
+│   │     ├── Domain Core
+│   │     ├── Application Services
+│   │     └── Infrastructure
+│   │
+│   ├── CQRS
+│   │     ├── Commands
+│   │     ├── Queries
+│   │     ├── Write Model
+│   │     └── Read Model
+│   │
+│   ├── Event Sourcing
+│   │     ├── Event Store
+│   │     ├── Aggregate Replay
+│   │     └── Snapshots
+│   │
+│   ├── Pipe-and-Filter
+│   │     ├── Filters
+│   │     └── Pipes
+│   │
+│   ├── Microkernel
+│   │     ├── Core System
+│   │     └── Plug-ins
+│   │
+│   └── Serverless
+│         ├── Functions
+│         └── Managed Services
 │
-├── 3️⃣ Enterprise Patterns (dentro da arquitetura)
-│      ├── Repository
-│      ├── Unit of Work
-│      ├── Service Layer
-│      ├── Data Mapper
-│      └── Identity Map
 │
-├── 4️⃣ Architectural Principles (regras estruturais)
-│      ├── Separation of Concerns
-│      ├── Loose Coupling
-│      ├── High Cohesion
-│      └── Dependency Inversion (arquitetural)
+├── 3️⃣ ENTERPRISE PATTERNS (padrões corporativos estruturais)
+│   │
+│   ├── Domain-Driven Design (DDD)
+│   │     ├── Ubiquitous Language
+│   │     ├── Entity
+│   │     ├── Value Object
+│   │     ├── Aggregate
+│   │     ├── Aggregate Root
+│   │     ├── Repository
+│   │     ├── Factory
+│   │     ├── Domain Service
+│   │     ├── Application Service
+│   │     ├── Bounded Context
+│   │     └── Context Mapping
+│   │
+│   ├── Service Layer
+│   ├── Repository Pattern
+│   ├── Unit of Work
+│   ├── Identity Map
+│   ├── Data Mapper
+│   ├── Active Record
+│   ├── Transaction Script
+│   ├── Domain Model
+│   ├── Table Data Gateway
+│   └── Gateway Pattern
 │
-├── 5️⃣ Design Patterns (nível de código)
-│      ├── Creational
-│      │     ├── Factory
-│      │     └── Builder
-│      ├── Structural
-│      │     ├── Adapter
-│      │     └── Decorator
-│      └── Behavioral
-│            ├── Strategy
-│            └── Observer
 │
-└── 6️⃣ Design Principles (fundamentos)
-       ├── SOLID
-       ├── DRY
-       ├── KISS
-       └── YAGNI
+├── 4️⃣ ARCHITECTURAL PRINCIPLES (princípios estruturais)
+│   │
+│   ├── Separation of Concerns
+│   ├── Single Responsibility (arquitetural)
+│   ├── High Cohesion
+│   ├── Low Coupling
+│   ├── Dependency Rule
+│   ├── Dependency Inversion
+│   ├── Explicit Boundaries
+│   ├── Interface Segregation (arquitetural)
+│   ├── Modularity
+│   ├── Encapsulation
+│   └── Scalability by Design
+│
+│
+├── 5️⃣ DESIGN PATTERNS (nível de código e componentes)
+│   │
+│   ├── Creational
+│   │     ├── Factory Method
+│   │     ├── Abstract Factory
+│   │     ├── Builder
+│   │     ├── Prototype
+│   │     └── Singleton
+│   │
+│   ├── Structural
+│   │     ├── Adapter
+│   │     ├── Decorator
+│   │     ├── Facade
+│   │     ├── Composite
+│   │     ├── Bridge
+│   │     └── Proxy
+│   │
+│   ├── Behavioral
+│   │     ├── Strategy
+│   │     ├── Observer
+│   │     ├── Command
+│   │     ├── Mediator
+│   │     ├── State
+│   │     ├── Template Method
+│   │     ├── Chain of Responsibility
+│   │     ├── Iterator
+│   │     └── Visitor
+│   │
+│   └── Concurrency Patterns
+│         ├── Thread Pool
+│         ├── Producer-Consumer
+│         └── Future/Promise
+│
+│
+└── 6️⃣ DESIGN PRINCIPLES (fundamentos do código)
+    │
+    ├── SOLID
+    │     ├── SRP
+    │     ├── OCP
+    │     ├── LSP
+    │     ├── ISP
+    │     └── DIP
+    │
+    ├── DRY
+    ├── KISS
+    ├── YAGNI
+    ├── Composition over Inheritance
+    ├── Law of Demeter
+    ├── Program to an Interface
+    ├── Prefer Immutability
+    └── Tell, Don’t Ask
+</pre>
